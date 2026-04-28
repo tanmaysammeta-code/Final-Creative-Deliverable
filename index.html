@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Respite Care in Vermont</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Sticky story bar: helps viewers navigate the policy pitch as they scroll -->
+    <nav class="story-bar" aria-label="Page progress navigation">
+      <div class="container story-bar-inner">
+        <a class="story-link active" href="#problem" data-target="problem">Problem</a>
+        <a class="story-link" href="#failure" data-target="failure">Failure</a>
+        <a class="story-link" href="#gap" data-target="gap">Gap</a>
+        <a class="story-link" href="#solution" data-target="solution">Solution</a>
+        <a class="story-link" href="#evidence" data-target="evidence">Evidence</a>
+        <a class="story-link" href="#policy" data-target="policy">Policy</a>
+      </div>
+    </nav>
+
+    <!-- Hero section: introduces the core policy question and invites the user into the story -->
+    <header class="hero section reveal visible" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Vermont Healthcare Policy Project</p>
+          <h1>Where do patients go after the hospital if they don’t have a home?</h1>
+          <p class="hero-subtitle">
+            A Vermont policy proposal for medical respite care.
+          </p>
+          <p class="hero-text">
+            This page is designed to become a research-backed, persuasive policy
+            pitch for Vermont decision-makers. It lays out the problem, shows
+            the current system gap, and introduces medical respite care as a
+            practical response that can be strengthened later with final
+            citations, charts, and Vermont-specific evidence.
+          </p>
+          <button class="button" id="scroll-button" type="button">
+            Start the story
+          </button>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-panel-card">
+            <p class="panel-label">Policy Focus</p>
+            <h2>Discharge, recovery, and housing stability</h2>
+            <ul class="hero-list">
+              <li>Hospital discharge without a home creates medical risk.</li>
+              <li>Emergency shelter does not equal supported recovery.</li>
+              <li>Medical respite can bridge care and stability.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Problem section: establishes the Vermont context and reserves space for key homelessness data -->
+      <section class="section reveal story-section" id="problem" data-story="problem">
+        <div class="container two-column">
+          <div class="section-copy">
+            <p class="section-label">Problem</p>
+            <h2>Vermont Reality</h2>
+            <p class="section-intro">
+              Homelessness in Vermont is a housing issue, a public health issue,
+              and a discharge planning issue at the same time.
+            </p>
+
+            <div class="stats-grid">
+              <article class="stat-card">
+                <h3>3,386 unhoused Vermonters</h3>
+                <p>
+                  Estimated number of people experiencing homelessness in
+                  Vermont in 2025.
+                </p>
+              </article>
+              <article class="stat-card">
+                <h3>4th highest per-capita rate in the U.S.</h3>
+                <p>
+                  53 people per 10,000 in Vermont compared to 22.7 nationally
+                  (2024).
+                </p>
+              </article>
+              <article class="stat-card">
+                <h3>Housing shortage is the primary driver</h3>
+                <p>
+                  Lack of affordable housing and poverty are key drivers of
+                  homelessness in Vermont.
+                </p>
+              </article>
+            </div>
+
+            <div class="research-block">
+              <p>
+                Vermont has one of the highest rates of homelessness in the
+                country, with 53 people experiencing homelessness per 10,000
+                residents compared to 22.7 nationally, ranking fourth overall
+                in 2024. The state has seen continued increases among vulnerable
+                populations, including a 36 percent rise in homelessness among
+                families with children from 2022 to 2023. Structural factors,
+                particularly a shortage of affordable housing and persistent
+                poverty, are consistently identified as the primary drivers of
+                homelessness statewide. Housing instability extends beyond those
+                currently unhoused, with 10 percent of Vermonters aged 45 to 59
+                and 3 percent of those aged 60 and older experiencing housing
+                insecurity. Disparities persist, with higher rates of housing
+                insecurity among Black, Indigenous, and people of color compared
+                to White residents.
+              </p>
+            </div>
+          </div>
+
+          <div class="section-visual">
+            <figure class="chart-card">
+              <div class="chart-card-header">
+                <p class="panel-label">Problem Graph</p>
+                <h3>Vermont homelessness increased sharply after 2020</h3>
+                <span class="chart-badge urgent">About +205%</span>
+              </div>
+              <div class="chart-wrap">
+                <canvas id="homelessnessGrowthChart"></canvas>
+              </div>
+              <figcaption class="chart-caption">
+                Vermont’s unhoused population rose from 1,110 in 2020 to 3,386 in
+                2025 — an increase of about 205%.
+              </figcaption>
+              <p class="source-note">
+                Source: 2025 State of Homelessness in Vermont Report, Executive
+                Summary, p. 4.
+              </p>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Health impact section: expandable cards explain why homelessness makes recovery harder -->
+      <section class="section reveal" id="health-impact">
+        <div class="container">
+          <div class="section-heading narrow">
+            <p class="section-label">Health Impact</p>
+            <h2>Why a lack of housing quickly becomes a health care problem</h2>
+            <p>
+              Click each issue area to show the kind of placeholder explanation
+              you can later replace with data, clinical framing, and citations.
+            </p>
+          </div>
+
+          <div class="expandable-grid">
+            <article class="expandable-card" tabindex="0">
+              <button class="expand-toggle" type="button" aria-expanded="false">
+                <span>Unstable discharge environments</span>
+                <span class="toggle-symbol">+</span>
+              </button>
+              <div class="expand-content">
+                <p>
+                  Patients experiencing homelessness are often discharged to
+                  shelters or the street, environments that lack the basic
+                  conditions needed for recovery such as rest, hygiene, and safe
+                  wound care. Hospitals are not designed to address these needs,
+                  and discharge options are limited for this population. As a
+                  result, recovery is frequently disrupted immediately after
+                  discharge. This contributes to higher hospital readmission
+                  rates, with studies showing 27.3% readmission among unhoused
+                  patients compared to 17.5% for housed patients.
+                </p>
+              </div>
+            </article>
+
+            <article class="expandable-card" tabindex="0">
+              <button class="expand-toggle" type="button" aria-expanded="false">
+                <span>Barriers to treatment adherence</span>
+                <span class="toggle-symbol">+</span>
+              </button>
+              <div class="expand-content">
+                <p>
+                  Managing medications and treatment plans is significantly more
+                  difficult without stable housing. Many patients lack access to
+                  refrigeration, secure storage, and consistent daily routines
+                  needed to take medications correctly. Follow-up care is also
+                  harder to access, with housing-insecure adults over four times
+                  more likely to delay healthcare due to cost. These barriers
+                  reduce treatment effectiveness and increase the risk of
+                  complications after discharge.
+                </p>
+              </div>
+            </article>
+
+            <article class="expandable-card" tabindex="0">
+              <button class="expand-toggle" type="button" aria-expanded="false">
+                <span>High rates of emergency and hospital use</span>
+                <span class="toggle-symbol">+</span>
+              </button>
+              <div class="expand-content">
+                <p>
+                  People experiencing homelessness have substantially higher
+                  rates of emergency department visits and hospital readmissions
+                  than housed populations. Studies show 30-day readmission rates
+                  exceeding 25%, and emergency department revisit rates of 37.1%
+                  compared to 23.6% for housed patients. This pattern reflects
+                  gaps in access to primary care and recovery support after
+                  discharge. It also drives higher healthcare costs and system
+                  strain.
+                </p>
+              </div>
+            </article>
+
+            <article class="expandable-card" tabindex="0">
+              <button class="expand-toggle" type="button" aria-expanded="false">
+                <span>Complex health and behavioral health needs</span>
+                <span class="toggle-symbol">+</span>
+              </button>
+              <div class="expand-content">
+                <p>
+                  Homelessness is associated with higher rates of chronic
+                  illness, mental health conditions, and substance use
+                  disorders. Among low-income Vermonters, rates of chronic
+                  conditions are significantly elevated, including 56% with a
+                  disability and 40% with arthritis. These conditions require
+                  consistent management, which is difficult without stable
+                  housing. As a result, health conditions worsen over time and
+                  lead to repeated use of emergency and inpatient care.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Failure section: shows the discharge loop and makes the system breakdown visually clear -->
+      <section class="section reveal story-section" id="failure" data-story="failure">
+        <div class="container">
+          <div class="section-copy section-copy-wide">
+            <p class="section-label">Failure</p>
+            <h2>System Failure Loop</h2>
+            <p class="section-intro">
+              Without a recovery setting, discharge often becomes a short pause
+              before the next crisis.
+            </p>
+          </div>
+
+          <div class="section-visual section-visual-wide">
+            <div class="loop-diagram" aria-label="System failure loop diagram">
+              <div class="loop-step active">Hospital</div>
+              <div class="loop-arrow" aria-hidden="true">→</div>
+              <div class="loop-step">Discharge</div>
+              <div class="loop-arrow" aria-hidden="true">→</div>
+              <div class="loop-step">Street / Shelter</div>
+              <div class="loop-arrow" aria-hidden="true">→</div>
+              <div class="loop-step">Worsening Health</div>
+              <div class="loop-arrow" aria-hidden="true">→</div>
+              <div class="loop-step">ER Return</div>
+            </div>
+
+            <blockquote class="impact-quote impact-quote-wide">
+              Too sick for the street. Not sick enough for the hospital.
+            </blockquote>
+
+            <div class="research-block research-block-wide">
+              <p>
+                Patients experiencing homelessness often move through a
+                repeating cycle of hospital care, discharge, and rapid return
+                because the system is not designed to support recovery without
+                stable housing. Hospital discharge processes are frequently
+                ill-suited for this population, with limited options for
+                patients who cannot safely recover in traditional home settings.
+                After discharge, many patients are unable to access follow-up
+                care, with studies showing significantly lower rates of
+                post-discharge physician visits among people experiencing
+                homelessness. Without continuity of care or a stable environment
+                to complete treatment, existing conditions can worsen and new
+                complications can emerge. Patients are then forced to rely on
+                emergency care when symptoms become acute again. This creates a
+                predictable cycle in which discharge does not lead to recovery,
+                but instead leads back to the hospital.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gap section: combines the Vermont motel case and a policy comparison tool -->
+      <section class="section reveal story-section" id="gap" data-story="gap">
+        <div class="container">
+          <div class="section-copy section-copy-wide">
+            <p class="section-label">Gap</p>
+            <h2>Vermont Case Study: Motel Program</h2>
+            <p class="section-intro">
+              The motel program helps show why shelter matters and why shelter
+              alone does not finish the job.
+            </p>
+          </div>
+
+          <div class="case-columns case-columns-wide">
+            <article class="info-card">
+              <h3>What Vermont’s motel program did well</h3>
+              <p>
+                Vermont’s motel program rapidly expanded access to indoor
+                shelter during the COVID-19 pandemic, housing around 2,000
+                people at a time and using more than 1,000 rooms statewide.
+                It prioritized medically vulnerable individuals and families,
+                providing private rooms that improved safety, stability, and
+                protection from exposure. In many ways, motel placements created
+                conditions similar to recovery environments, including rest,
+                privacy, and consistent indoor space. As an emergency response,
+                it demonstrated how providing space can immediately reduce harm
+                and meet urgent shelter needs.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <h3>Where the model fell short</h3>
+              <p>
+                The motel program was designed as short-term emergency housing,
+                with time limits and eligibility rules that created instability
+                and frequent exits from shelter. While motel rooms provided
+                space, the program did not include clinical care, care
+                coordination, or structured recovery support. It also relied
+                heavily on pandemic-era funding and emergency policies, making
+                it difficult to sustain in a post-COVID system. These
+                limitations revealed the gap between providing shelter and
+                supporting recovery.
+              </p>
+            </article>
+          </div>
+
+          <div class="two-column case-study-detail-row">
+            <div class="section-copy">
+              <div class="research-block">
+                <p>
+                  Vermont’s motel program makes clear that expanding shelter
+                  capacity alone does not address the full scope of homelessness
+                  as a health issue. While the program successfully demonstrated
+                  the importance of providing private, indoor space, it also
+                  showed that space alone is not enough to support recovery
+                  after illness or hospitalization. Without systems for medical
+                  care, follow-up, and care coordination, the benefits of
+                  shelter are often temporary. The program also highlighted how
+                  emergency responses built around short-term funding and
+                  eligibility rules can create instability rather than
+                  continuity. As a result, it exposed a structural gap between
+                  emergency housing and recovery-focused care. This distinction
+                  is critical for policy, as it shows that addressing
+                  homelessness requires not only more shelter, but also systems
+                  designed to support health and recovery over time.
+                </p>
+              </div>
+            </div>
+
+            <div class="section-visual">
+              <figure class="chart-card">
+                <div class="chart-card-header">
+                  <p class="panel-label">Case Study Graph</p>
+                  <h3>Vermont’s emergency shelter capacity does not meet current need</h3>
+                  <div class="badge-row">
+                    <span class="chart-badge neutral">Shelter capacity: about 18%</span>
+                    <span class="chart-badge blue">GA Emergency Housing: about 30%</span>
+                  </div>
+                </div>
+                <div class="chart-wrap">
+                  <canvas id="shelterNeedChart"></canvas>
+                </div>
+                <figcaption class="chart-caption">
+                  Vermont’s emergency response reaches only part of the need:
+                  statewide shelter capacity is about 18% of the 2025 PIT count,
+                  and GA Emergency Housing served about 30% of that count.
+                </figcaption>
+                <p class="source-note">
+                  Source: 2025 State of Homelessness in Vermont Report, pp. 4 and 10.
+                </p>
+              </figure>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Solution section: defines medical respite and lets the viewer build the support model piece by piece -->
+      <section class="section reveal story-section" id="solution" data-story="solution">
+        <div class="container two-column">
+          <div class="section-copy">
+            <p class="section-label">Solution</p>
+            <h2>Medical Respite Care</h2>
+            <p class="solution-definition">
+              Short-term medical recovery housing for people experiencing
+              homelessness after hospital discharge.
+            </p>
+            <p class="section-intro">
+              Medical respite is not a hospital replacement and not simply a
+              shelter bed. It is a bridge.
+            </p>
+
+            <div class="research-block">
+              <p>
+                Medical respite care provides short-term residential recovery
+                for people experiencing homelessness who are too sick to recover
+                on the street but not sick enough to remain in the hospital. It
+                serves as a bridge between hospital discharge and full recovery,
+                offering a safe place where patients can rest, stabilize, and
+                complete treatment. Unlike emergency shelter, medical respite
+                includes clinical care, care coordination, and support for
+                managing medications and follow-up appointments. Patients
+                typically stay for several weeks, allowing time to recover from
+                acute illness or injury while reconnecting to ongoing care. By
+                filling the gap between acute care and housing instability,
+                medical respite helps improve recovery and prevent avoidable
+                returns to the hospital.
+              </p>
+            </div>
+          </div>
+
+          <div class="section-visual">
+            <div class="model-builder">
+              <p class="panel-label">Build the Respite Model</p>
+              <div class="model-button-grid">
+                <button class="model-button" type="button" data-part="monitoring">
+                  Medical monitoring
+                </button>
+                <button class="model-button" type="button" data-part="medication">
+                  Medication support
+                </button>
+                <button class="model-button" type="button" data-part="case">
+                  Case management
+                </button>
+                <button class="model-button" type="button" data-part="housing">
+                  Housing connection
+                </button>
+              </div>
+
+              <div class="model-visual" id="model-visual">
+                <div class="model-slot" data-slot="monitoring">Medical monitoring</div>
+                <div class="model-slot" data-slot="medication">Medication support</div>
+                <div class="model-slot" data-slot="case">Case management</div>
+                <div class="model-slot" data-slot="housing">Housing connection</div>
+              </div>
+
+              <div class="model-explanation" id="model-explanation" hidden>
+                <p></p>
+              </div>
+
+              <p class="model-complete-message" id="model-complete-message" hidden>
+                Together, these supports create a bridge between hospital
+                discharge and stable recovery.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Evidence section: keeps the toggle while adding paragraph space and a chart placeholder -->
+      <section class="section reveal story-section" id="evidence" data-story="evidence">
+        <div class="container two-column">
+          <div class="section-copy">
+            <p class="section-label">Evidence</p>
+            <h2>What changes when recovery support exists</h2>
+            <p class="section-intro">
+              The evidence case can later combine outcomes, cost findings, and
+              discharge planning implications in one clear narrative.
+            </p>
+
+            <div class="toggle-group" role="tablist" aria-label="Evidence comparison">
+              <button
+                class="toggle-button active"
+                type="button"
+                data-view="without"
+                role="tab"
+                aria-selected="true"
+              >
+                Without Respite
+              </button>
+              <button
+                class="toggle-button"
+                type="button"
+                data-view="with"
+                role="tab"
+                aria-selected="false"
+              >
+                With Respite
+              </button>
+            </div>
+
+            <div class="evidence-panel active" id="without-panel">
+              <ul class="evidence-list">
+                <li>Repeat ER use</li>
+                <li>Longer recovery</li>
+                <li>Higher hospital costs</li>
+              </ul>
+            </div>
+
+            <div class="evidence-panel" id="with-panel">
+              <ul class="evidence-list">
+                <li>Fewer hospital admissions</li>
+                <li>Shorter inpatient stays</li>
+                <li>Better connection to outpatient care</li>
+                <li>Cost savings</li>
+              </ul>
+            </div>
+
+            <div class="research-block">
+              <p>
+                Evidence across multiple studies shows that medical respite care
+                reduces hospital use while improving system efficiency after
+                discharge. In a cohort study, only 28% of patients receiving
+                respite care were rehospitalized within a year, compared to 61%
+                of those receiving usual care, indicating a substantial
+                reduction in repeat hospitalizations . A separate analysis found
+                that discharge to respite care was associated with a 46% lower
+                odds of 90-day hospital readmission compared to discharge to the
+                street or shelter . Systematic review evidence further shows
+                consistent reductions in hospital admissions, inpatient days,
+                and readmissions across programs, alongside improved housing
+                outcomes after discharge . At the same time, hospitalizations
+                for patients experiencing homelessness cost on average $2,559
+                more per stay than for housed patients, largely due to extended
+                lengths of stay when safe discharge options are unavailable .
+                Together, these findings show that medical respite does not
+                just reduce utilization, but improves how and where care is
+                delivered after hospitalization.
+              </p>
+            </div>
+          </div>
+
+          <div class="section-visual">
+            <figure class="chart-card">
+              <div class="chart-card-header">
+                <p class="panel-label">Evidence Graph</p>
+                <h3>Cohort study: respite care vs. usual care</h3>
+                <div class="badge-row">
+                  <span class="chart-badge success">Inpatient days: about -58%</span>
+                  <span class="chart-badge success">ED visits: about -36%</span>
+                  <span class="chart-badge blue">Outpatient visits: about +12%</span>
+                </div>
+              </div>
+              <div class="chart-wrap chart-wrap-evidence">
+                <canvas id="cohortRespiteChart"></canvas>
+              </div>
+              <p class="source-note">
+                Source: Buchanan et al., “The Effects of Respite Care for Homeless
+                Patients,” Table 2, p. 3.
+              </p>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cost section: adds a placeholder calculator and reserved space for future savings evidence -->
+      <section class="section reveal" id="cost">
+        <div class="container two-column">
+          <div class="section-copy">
+            <p class="section-label">Cost Effectiveness</p>
+            <h2>How a savings estimate could be framed</h2>
+
+            <div class="calculator-card">
+              <label class="slider-label" for="investment-slider">
+                Vermont investment amount:
+                <strong id="investment-value">$100,000</strong>
+              </label>
+              <input
+                id="investment-slider"
+                class="investment-slider"
+                type="range"
+                min="25000"
+                max="1000000"
+                step="25000"
+                value="100000"
+              />
+              <p class="calculator-result" id="savings-output">
+                If Vermont invests $100,000, the Buchanan cohort data suggest
+                this could support about 30 respite stays, avoid about 142
+                inpatient hospital days, and generate an estimated $113,000 in
+                net hospital savings.
+              </p>
+              <p class="calculator-note">
+                Illustrative estimate only. Final savings should be calculated
+                using Vermont-specific utilization and cost data.
+              </p>
+            </div>
+          </div>
+
+          <div class="section-visual">
+            <figure class="chart-card">
+              <div class="chart-card-header">
+                <p class="panel-label">Cost Graph</p>
+                <h3>Estimated hospital savings using Buchanan cohort data</h3>
+                <span class="chart-badge success">Based on avoided inpatient days</span>
+              </div>
+              <div class="chart-wrap">
+                <canvas id="costSavingsChart"></canvas>
+              </div>
+              <p class="source-note">
+                Buchanan et al. found that patients receiving medical respite
+                had 3.4 inpatient days over 12 months compared with 8.1 days
+                for usual care, a difference of 4.7 hospital days per patient.
+                Using the study’s estimated hospital cost of $1,500 per day and
+                respite cost of $79 per day for an average 42-day stay, each
+                respite stay cost about $3,318 and avoided about $7,050 in
+                hospital costs. That equals an estimated net savings of about
+                $3,732 per patient served, before accounting for Vermont-
+                specific program costs or patient mix.
+              </p>
+              <p class="source-note">
+                Source: Buchanan et al., “The Effects of Respite Care for
+                Homeless Patients”
+              </p>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Policy proposal section: ends the page with a clear, step-by-step implementation roadmap -->
+      <section class="section reveal story-section" id="policy" data-story="policy">
+        <div class="container">
+          <div class="section-copy section-copy-wide">
+            <p class="section-label">Policy</p>
+            <h2>Policy Proposal</h2>
+            <p class="section-intro">
+              A Vermont strategy can start with a pilot, build partnerships, and
+              create a stronger discharge pathway over time.
+            </p>
+          </div>
+
+          <div class="roadmap roadmap-grid">
+            <article class="roadmap-step">
+              <span class="step-number">1</span>
+              <div>
+                <h3>Fund regional pilot programs</h3>
+                <p>
+                  Start with a small number of regional pilots in areas where
+                  hospital demand and homelessness overlap to test the model and
+                  generate Vermont-specific data.
+                </p>
+              </div>
+            </article>
+
+            <article class="roadmap-step">
+              <span class="step-number">2</span>
+              <div>
+                <h3>Partner hospitals with community health centers</h3>
+                <p>
+                  Establish formal referral and care pathways between hospitals
+                  and community providers to ensure patients receive coordinated
+                  follow-up after discharge.
+                </p>
+              </div>
+            </article>
+
+            <article class="roadmap-step">
+              <span class="step-number">3</span>
+              <div>
+                <h3>Use Medicaid Section 1115 waiver authority where possible</h3>
+                <p>
+                  Leverage Medicaid flexibility to fund care coordination, case
+                  management, and recovery services that improve health outcomes
+                  and reduce costs.
+                </p>
+              </div>
+            </article>
+
+            <article class="roadmap-step">
+              <span class="step-number">4</span>
+              <div>
+                <h3>Add medical respite referral into hospital discharge planning</h3>
+                <p>
+                  Integrate respite care as a standard discharge option for
+                  eligible patients to ensure safe recovery and reduce
+                  avoidable readmissions.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="research-block research-block-wide">
+            <p>
+              A Vermont medical respite strategy can begin with a targeted
+              regional pilot that focuses on areas with high hospital
+              utilization and limited discharge options. A pilot approach allows
+              the state to test program design, identify the patients who
+              benefit most, and measure impacts on hospital use and costs
+              before scaling. Successful implementation will require
+              coordination between hospitals, community health providers,
+              housing organizations, and state agencies to ensure continuity of
+              care after discharge. Existing Medicaid pathways, including
+              Section 1115 waivers, can be used to support care coordination
+              and recovery services tied to health outcomes. Embedding medical
+              respite into discharge planning ensures that patients have a safe
+              place to recover, reducing avoidable hospital returns. Over time,
+              data from the pilot can guide expansion and help build a more
+              effective, statewide recovery system.
+            </p>
+          </div>
+
+          <div class="section-visual section-visual-wide">
+            <div class="policy-summary-card policy-goal-card">
+              <p class="panel-label">Policy Goal</p>
+              <h3>What the proposal is asking for</h3>
+              <ul class="summary-list">
+                <li>Pilot medical respite regionally.</li>
+                <li>Connect hospitals with community care partners.</li>
+                <li>Measure health outcomes and cost effects.</li>
+                <li>Use results to guide future scaling.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to action section: closes the page with a strong policy message -->
+      <section class="section reveal call-to-action" id="call-to-action">
+        <div class="container callout-grid">
+          <div>
+            <p class="section-label">Call to Action</p>
+            <h2>Recovery shouldn’t depend on having a home.</h2>
+          </div>
+          <p>
+            Vermont policymakers can close the gap between hospital discharge
+            and homelessness by treating recovery support as part of the health
+            care system, not as an afterthought. Medical respite will not solve
+            every housing challenge, but it can create a more humane, practical,
+            and evidence-ready response for patients who are otherwise left
+            without a safe place to heal.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-text">Review the research and policy sources behind this project.</p>
+        <a class="button footer-button" href="citations.html">Sources</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
